@@ -1,0 +1,46 @@
+@import './_mixin';
+$backgroundColor: #f8fbff;
+$fontColor: #000;
+$fontSize: 15px;
+$headerBackgroundColor: #244679;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  max-width: 100%;
+  background-color: $backgroundColor;
+  color: $fontColor;
+  font-size: $fontSize;
+}
+header {
+  background-color: $headerBackgroundColor;
+  padding-top: 2%;
+  .header-top {
+    padding: 0.75rem;
+    border-top: 1px solid #fff;
+  }
+  .logo {
+    width: 90px;
+  }
+  .brand {
+    width: 100px;
+  }
+}
+@include mw_medium() {
+  header {
+    padding-top: 5%;
+    .header-top {
+      padding: 0.5rem;
+      border-top: 1px solid #fff;
+    }
+    .logo {
+      width: 20%;
+    }
+    .brand {
+      width: 35%;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+$mw_1366: 'only screen and (max-width: 1366px)';
+$mw_1280: 'only screen and (max-width: 1280px)';
+$mw_1024: 'only screen and (max-width: 1023px)';
+$mh_801: 'only screen and (min-height: 801px)';
+
+@mixin mw_big() {
+  @media #{$mw_1366} {
+    @content;
+  }
+}
+
+@mixin mw_medium() {
+  @media #{$mw_1280} {
+    @content;
+  }
+}
+
+@mixin mw_small() {
+  @media #{$mw_1024} {
+    @content;
+  }
+}

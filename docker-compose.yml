@@ -1,0 +1,28 @@
+version: '2'
+services:
+  apache:
+    build: .\containers\student_profiles
+    volumes:
+      - .:/var/www/html/student_profiles
+    ports:
+      - '8888:80'
+    networks:
+      ji_dev_net:
+        aliases:
+          - student-profiles
+  student_profiles:
+    image: node:latest
+    volumes:
+      - .:/target
+      - student_profiles_node_modules:/target/node_modules
+      - ./public:/target/public
+    working_dir: /target
+    networks:
+      ji_dev_net:
+        aliases:
+          - student_profiles
+networks:
+  ji_dev_net:
+    # external: true
+volumes:
+  student_profiles_node_modules:
